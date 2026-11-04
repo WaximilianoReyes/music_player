@@ -1,12 +1,9 @@
-# CLI App
+# music_player.wav
 
-**The project brief is in [PROJECT.md](./PROJECT.md).** Start there.
+A simple terminal music player program that will allow the user to upload and listen to any .wav audio
 
-This file is yours to write. When your project works, replace everything here
-with a description of what you built: what it does, how to run it, and a usage
-example. Write it for someone who has never seen your project before.
+<h3><b>features Imma add into my music player</b></h3>
 
-For an example of what a finished one looks like, see the
-[Task Manager Case Study](https://github.com/The-Marcy-Lab-School/swe-casestudy-1-cli-task-manager),
-which is a working Python CLI app with investigation questions to work
-through.
+- Number of selections to what the user wants to listen to
+- upload feature for users to import audio files
+- add a progress bar for songs to let the user know how much time is left of the song
