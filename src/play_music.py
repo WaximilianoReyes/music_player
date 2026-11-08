@@ -23,20 +23,9 @@ def play_music(folder, song_name):
     pygame.mixer.music.load(file_path)
     pygame.mixer.music.play()
 
-    # Changing positions of specific songs
-    # if song_name == "Find a Way(Master).wav":
-    #     pygame.mixer.music.set_pos(90.0)
-    #     pygame.mixer.music.set_volume(0.5)
-    # if song_name == "PEEL MY SKIN - 120bpm v2.wav":
-    #     pygame.mixer.music.set_pos(13.0)
-    #     pygame.mixer.music.set_volume(0.2)
-    # if song_name == "Body & Soul - master.wav":
-    #     pygame.mixer.music.set_pos(48.0)
-    #     pygame.mixer.music.set_volume(0.3)
-    # if song_name == "Im Scared.wav":
-    #     pygame.mixer.music.set_pos(48.0)
 
     # pygame set_volume is like a decibel meter in fl studio: 0.0-1.0
+    
     song_setting = {
         "Find a Way(Master).wav": {"pos": 90.0, "volume": 0.5},
         "PEEL MY SKIN - 120bpm v2.wav": {"pos": 13.0, "volume": 0.2},
