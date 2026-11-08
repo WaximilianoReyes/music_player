@@ -3,6 +3,8 @@ import pygame
 import time
 from tqdm import tqdm
 from mutagen.wave import WAVE
+from menu import audio_menu
+
 
 
 def play_music(folder, song_name):
@@ -22,44 +24,36 @@ def play_music(folder, song_name):
     pygame.mixer.music.play()
 
     # Changing positions of specific songs
-    if song_name == "Find a Way(Master).wav":
-        pygame.mixer.music.set_pos(40.0)
-        pygame.mixer.music.set_volume(0.5)
-    if song_name == "PEEL MY SKIN - 120bpm v2.wav":
-        pygame.mixer.music.set_pos(13.0)
-    if song_name == "Body & Soul - master.wav":
-        pygame.mixer.music.set_pos(48.0)
-        pygame.mixer.music.set_volume(0.3)
+    # if song_name == "Find a Way(Master).wav":
+    #     pygame.mixer.music.set_pos(90.0)
+    #     pygame.mixer.music.set_volume(0.5)
+    # if song_name == "PEEL MY SKIN - 120bpm v2.wav":
+    #     pygame.mixer.music.set_pos(13.0)
+    #     pygame.mixer.music.set_volume(0.2)
+    # if song_name == "Body & Soul - master.wav":
+    #     pygame.mixer.music.set_pos(48.0)
+    #     pygame.mixer.music.set_volume(0.3)
+    # if song_name == "Im Scared.wav":
+    #     pygame.mixer.music.set_pos(48.0)
+
+    # pygame set_volume is like a decibel meter in fl studio: 0.0-1.0
+    song_setting = {
+        "Find a Way(Master).wav": {"pos": 90.0, "volume": 0.5},
+        "PEEL MY SKIN - 120bpm v2.wav": {"pos": 13.0, "volume": 0.2},
+        "Body & Soul - master.wav": {"pos": 48.0, "volume": 0.3},
+        "Im Scared.wav": {"pos": 48.0, "volume": 1.0},
+        "Never Forget.wav": {"pos": 100.0, "volume": 0.8}
+    }
+
+    settings = song_setting.get(song_name)
+    if settings:
+        pygame.mixer.music.set_pos(settings["pos"])
+        if "volume" in settings:
+            pygame.mixer.music.set_volume(settings["volume"])
+
 
     print(f"\nNow playing: {song_name}")
+    audio_menu()
 
-  
-    progress_bar = tqdm(
-            total=song_length,
-            unit="s"
-        )
-        
-    milliseconds = pygame.mixer.music.get_pos()
-    seconds_played = max(milliseconds, 0) / 1000
-        
-    progress_bar = int(seconds_played)
-    time.sleep(0.2)
 
-    # user input controls
-    print("Commands: [P]ause, [R]esume, [Re]wind, [S]top")
-    while True:
 
-        command = input("> ").upper()
-
-        if command == "P":
-            pygame.mixer.music.pause()
-            print("Paused")
-        elif command == "R":
-            pygame.mixer.music.unpause()
-            print("Resumed")
-        elif command == "S":
-            pygame.mixer.music.stop()
-            print("Stopped")
-            return
-        else:
-            print("Invalid command")
