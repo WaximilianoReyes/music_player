@@ -2,7 +2,7 @@ import pygame
 
 def audio_menu():
     # user input controls and menu
-    print("Commands: [P]ause, [R]esume, [Re]wind, [S]top")
+    print("Commands: [P]ause, [R]esume, [S]top")
 
     
     
