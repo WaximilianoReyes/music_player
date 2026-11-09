@@ -1,8 +1,7 @@
 import os
 import pygame
-import time
-from tqdm import tqdm
 from mutagen.wave import WAVE
+from tqdm import tqdm
 from menu import audio_menu
 
 
@@ -10,9 +9,9 @@ from menu import audio_menu
 def play_music(folder, song_name):
 
     file_path = os.path.join(folder, song_name)
-
     song_info = WAVE(file_path)
     song_length = int(song_info.info.length)
+
 
     if not os.path.join(folder, song_name):
         print("File found")
@@ -42,7 +41,11 @@ def play_music(folder, song_name):
 
 
     print(f"\nNow playing: {song_name}")
+
     audio_menu()
+
+# tqdm (self, iterable, desc= “Text You want”)
+
 
 
 

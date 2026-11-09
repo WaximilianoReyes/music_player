@@ -3,8 +3,11 @@ import pygame
 def audio_menu():
     # user input controls and menu
     print("Commands: [P]ause, [R]esume, [Re]wind, [S]top")
+
+    
+    
     while True:
-        
+
         command = input("> ").upper()
 
         if command == "P":

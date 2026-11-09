@@ -14,10 +14,12 @@ def main():
     
     folder = 'songs'
 
+    # reminding myself to insert the file
     if not os.path.isdir(folder):
         print(f"Folder '{folder}' not found")
         return
 
+    # begin loading songs
     wav_files = [file for file in sorted(os.listdir(folder)) if file.endswith(".wav".strip())]
 
     if not wav_files:
@@ -27,6 +29,7 @@ def main():
         print("***** .wav PLAYER *****")
         print("My Playlist: ")
 
+        # print out the list of songs in a folder starting the index from 1
         for index, song in enumerate(wav_files, start=1):
             print(f"{index}. {song}")
 
